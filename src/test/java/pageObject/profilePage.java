@@ -10,6 +10,7 @@ import org.testng.Assert;
 
 public class profilePage extends setup {
 
+
     public profilePage(WebDriver driver){
         PageFactory.initElements(driver, this);
         setup.driver = driver;

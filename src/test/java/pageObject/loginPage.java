@@ -28,6 +28,8 @@ public class loginPage extends setup {
     public WebElement loginButtonLoc;
     @FindBy(how= How.PARTIAL_LINK_TEXT, using = "Create")
     public WebElement createAccButtonLocator;
+    @FindBy(how= How.XPATH, using = "//div[@id='error_message']/div/h5")
+    public WebElement logInErrorMessageLocator;
 
     public void verifyHomepageTitle(){
         String act = driver.getTitle(); // comes development
@@ -64,6 +66,9 @@ public class loginPage extends setup {
     }
     public void clickCreateButton(){
         createAccButtonLocator.click();
+    }
+    public void verifyLoginErrorMessage(){
+        Assert.assertEquals(logInErrorMessageLocator.getText(),"➥You have entered an incorrect email or student Id.");
     }
 
 
